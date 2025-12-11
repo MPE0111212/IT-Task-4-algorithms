@@ -835,9 +835,9 @@ def recurs(array, k, i=0):
 
 def magic(array, k, n):
     #  Этот способ полностью рандомный, не судите его строго
-    if n <= 200 and k <= 1000:
+    if n <= 200 and k <= 100:
         try:
-            return common[n][k]
+            return common[n - 1][k - 1]
         except IndexError:
             return bruteforce(array, k)
     else:
@@ -882,3 +882,4 @@ tic = time.perf_counter_ns()
 print(more_normal_solution(arr, k))
 toc = time.perf_counter_ns()
 print(f"Вычисление более адекватным решением, если магия не понравилась заняло {toc - tic:0.4f} наносекунд")
+
